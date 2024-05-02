@@ -89,10 +89,11 @@ return {
     'Exafunction/codeium.vim',
     event = 'BufEnter',
     config = function()
-      -- Override tab because it already gets used for navigating autocomplete suggestions.
-      vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
       -- Defaults documented here:
       -- https://github.com/Exafunction/codeium.vim/blob/31dd2962c81759be007895db6ce089feec397c86/README.md?plain=1#L49-L101
+      vim.keymap.set('n', '<C-m>', function() return vim.fn['codeium#Chat']() end, { expr = true })
+      -- Override tab because it already gets used for navigating autocomplete suggestions.
+      vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
     end
   },
 }
