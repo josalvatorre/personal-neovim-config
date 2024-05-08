@@ -85,6 +85,10 @@ return {
       })
     end
   },
+  {
+    "tpope/vim-fugitive",
+    lazy = false,
+  },
   -- This was causing problems on a remote machine because there is no browser.
   -- The issue would reproduce if you open the references on a variable and try to go to one using "Enter".
   -- https://github.com/Exafunction/codeium.vim/blob/9406f13cf3eaa08318b76746bd105a04506cab27/autoload/codeium/command.vim#L78
