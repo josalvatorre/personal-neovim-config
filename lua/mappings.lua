@@ -12,3 +12,8 @@ map("i", "jk", "<ESC>")
 -- Remap 'y' to always copy to the system clipboard
 map('n', 'y', '"+y')
 map('v', 'y', '"+y')
++-- Remap 'p' to always paste from the system clipboard
++map('n', 'p', '"+p')
++map('v', 'p', '"+p')
++map('n', 'P', '"+P')
++map('v', 'P', '"+P')
