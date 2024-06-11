@@ -7,8 +7,6 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
-
 -- Remap 'y' to always copy to the system clipboard
 map('n', 'y', '"+y')
 map('v', 'y', '"+y')
@@ -17,3 +15,9 @@ map('n', 'p', '"+p')
 map('v', 'p', '"+p')
 map('n', 'P', '"+P')
 map('v', 'P', '"+P')
+
+-- Lsp configs
+map('n', '<space>e', vim.diagnostic.open_float)
+map('n', '[d', vim.diagnostic.goto_prev)
+map('n', ']d', vim.diagnostic.goto_next)
+map('n', '<space>q', vim.diagnostic.setloclist)
