@@ -91,8 +91,12 @@ return {
   },
   {
     'Exafunction/codeium.vim',
-    event = 'BufEnter',
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
     config = function()
+      require("codeium").setup({})
       -- Defaults documented here:
       -- https://github.com/Exafunction/codeium.vim/blob/31dd2962c81759be007895db6ce089feec397c86/README.md?plain=1#L49-L101
       vim.keymap.set('n', '<C-m>', function() return vim.fn['codeium#Chat']() end, { expr = true })
