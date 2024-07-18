@@ -19,7 +19,7 @@ return {
       ensure_installed = {
         "css-lsp" ,
         "efm",
-        "groovy-language-server"
+        "groovy-language-server",
         "html-lsp",
         "jdtls",
         "lua-language-server",
