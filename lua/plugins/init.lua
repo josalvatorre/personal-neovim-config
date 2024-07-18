@@ -17,10 +17,10 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "html-lsp",
-        "lua-language-server",
         "css-lsp" ,
         "efm",
+        "groovy-language-server"
+        "html-lsp",
         "jdtls",
         "lua-language-server",
         "prettier",

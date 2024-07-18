@@ -6,6 +6,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 local servers = {
   "cssls",
+  "gradle_ls",
   "html",
   "pyright",
 }
