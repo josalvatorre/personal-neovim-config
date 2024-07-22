@@ -91,7 +91,7 @@ return {
   },
   {
     'Exafunction/codeium.vim',
-    event = 'BufEnter',
+    event = 'VeryLazy',
     dependencies = {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
