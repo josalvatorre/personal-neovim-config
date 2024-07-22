@@ -91,7 +91,7 @@ return {
   },
   {
     'Exafunction/codeium.vim',
-    event = 'VeryLazy',
+    event = "BufEnter",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "hrsh7th/nvim-cmp",
@@ -102,6 +102,6 @@ return {
       vim.keymap.set('n', '<C-m>', function() return vim.fn['codeium#Chat']() end, { expr = true })
       -- Override tab because it already gets used for navigating autocomplete suggestions.
       vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-    end
+    end,
   },
 }
