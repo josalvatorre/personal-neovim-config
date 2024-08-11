@@ -64,10 +64,6 @@ return {
     end
   },
   {
-    "nvim-lua/plenary.nvim",
-    lazy = false,
-  },
-  {
     "nvim-pack/nvim-spectre",
     lazy = false,
     config = function()
@@ -89,21 +85,16 @@ return {
     "tpope/vim-fugitive",
     lazy = false,
   },
-  -- This prevents me from opening up references in gr.
-  -- It keeps trying to open the browser. https://github.com/Exafunction/codeium.vim/issues/357
-  -- {
-  --   'Exafunction/codeium.vim',
-  --   event = "BufEnter",
-  --   dependencies = {
-  --     "nvim-lua/plenary.nvim",
-  --     "hrsh7th/nvim-cmp",
-  --   },
-  --   config = function()
-  --     -- Defaults documented here:
-  --     -- https://github.com/Exafunction/codeium.vim/blob/31dd2962c81759be007895db6ce089feec397c86/README.md?plain=1#L49-L101
-  --     vim.keymap.set('n', '<C-m>', function() return vim.fn['codeium#Chat']() end, { expr = true })
-  --     -- Override tab because it already gets used for navigating autocomplete suggestions.
-  --     vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-  --   end,
-  -- },
+  {
+    -- Apparently, there is also an .nvim version, but it's known to have more issues.
+    'Exafunction/codeium.vim',
+    event = "BufEnter",
+    config = function()
+      -- Defaults documented here:
+      -- https://github.com/Exafunction/codeium.vim/blob/31dd2962c81759be007895db6ce089feec397c86/README.md?plain=1#L49-L101
+
+      -- Override tab because it already gets used for navigating autocomplete suggestions.
+      vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+    end,
+  },
 }
