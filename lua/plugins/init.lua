@@ -93,7 +93,8 @@ return {
       -- Defaults documented here:
       -- https://github.com/Exafunction/codeium.vim/blob/31dd2962c81759be007895db6ce089feec397c86/README.md?plain=1#L49-L101
 
-      -- Override tab because it already gets used for navigating autocomplete suggestions.
+      -- Override tab because I prefer to reserve it for navigating autocomplete suggestions.
+      vim.g.codeium_no_map_tab = 1
       vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
     end,
   },
