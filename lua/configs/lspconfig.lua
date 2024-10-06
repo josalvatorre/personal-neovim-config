@@ -9,6 +9,7 @@ local servers = {
   "gradle_ls",
   "html",
   "pyright",
+  "terraformls",
 }
 
 -- lsps with default config

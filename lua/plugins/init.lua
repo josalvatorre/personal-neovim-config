@@ -26,6 +26,7 @@ return {
         "prettier",
         "pyright",
         "stylua",
+        "terraform-ls",
         "typescript-language-server",
       },
     },
