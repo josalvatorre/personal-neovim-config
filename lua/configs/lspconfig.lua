@@ -1,37 +1,11 @@
--- load defaults i.e lua_lsp
-require("nvchad.configs.lspconfig").defaults()
-
-local lspconfig = require "lspconfig"
-local servers = {
+vim.lsp.enable({
   "cssls",
   "gradle_ls",
   "html",
   "pyright",
   "terraformls",
   "ts_ls",
-}
-local nvlsp = require "nvchad.configs.lspconfig"
-
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = nvlsp.on_attach,
-    on_init = nvlsp.on_init,
-    capabilities = nvlsp.capabilities,
-  }
-end
-
-lspconfig.efm.setup {
-  init_options = {documentFormatting = true},
-  settings = {
-    rootMarkers = {".git/"},
-    languages = {
-      lua = {
-        {formatCommand = "lua-format -i", formatStdin = true}
-      }
-    }
-  }
-}
+})
 
 -- The following was partially copied from
 -- https://github.com/neovim/nvim-lspconfig?tab=readme-ov-file#suggested-configuration
