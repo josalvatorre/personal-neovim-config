@@ -8,6 +8,7 @@ local servers = {
   "html",
   "pyright",
   "terraformls",
+  "ts_ls",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
@@ -19,13 +20,6 @@ for _, lsp in ipairs(servers) do
     capabilities = nvlsp.capabilities,
   }
 end
-
--- typescript
-lspconfig.ts_ls.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-}
 
 lspconfig.efm.setup {
   init_options = {documentFormatting = true},
