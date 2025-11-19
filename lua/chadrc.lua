@@ -6,7 +6,7 @@
 local M = {}
 
 M.ui = {
-  theme = "monochrome",
+  theme = "yoru",
 }
 
 M.nvdash = { load_on_startup = true }
