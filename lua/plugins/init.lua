@@ -27,7 +27,7 @@ return {
         "pyright",
         "stylua",
         "terraform-ls",
-        "typescript-language-server",
+        "tsgo",
       },
     },
   },

@@ -1,10 +1,29 @@
+vim.lsp.config("tsgo", {
+  cmd = { "tsgo", "--lsp", "--stdio" },
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+  },
+  root_markers = {
+    "tsconfig.json",
+    "tsconfig.base.json",
+    "jsconfig.json",
+    "package.json",
+    ".git",
+  },
+})
+
 vim.lsp.enable({
   "cssls",
   "gradle_ls",
   "html",
   "pyright",
   "terraformls",
-  "ts_ls",
+  "tsgo",
 })
 
 -- The following was partially copied from
