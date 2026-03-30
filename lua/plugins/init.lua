@@ -116,6 +116,25 @@ return {
   },
   {
     "folke/persistence.nvim",
-    event = "BufReadPre", -- this will only start session saving when an actual file was opened
+    event = "BufReadPre",
+    opts = {},
+    config = function(_, opts)
+      require("persistence").setup(opts)
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "PersistenceSavePre",
+        callback = function()
+          for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+            local name = vim.api.nvim_buf_get_name(buf)
+            if name:match("NvimTree_") then
+              vim.api.nvim_buf_delete(buf, { force = true })
+            end
+          end
+        end,
+      })
+    end,
+    keys = {
+      { "<leader>qs", function() require("persistence").load() end, desc = "Restore Session" },
+      { "<leader>ql", function() require("persistence").load({ last = true }) end, desc = "Restore Last Session" },
+    },
   },
 }
